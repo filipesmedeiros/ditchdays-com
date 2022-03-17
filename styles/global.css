@@ -1,3 +1,24 @@
-h1 {
-  color: #000;
+@font-face {
+  font-family: 'Thunder';
+  font-weight: 100;
+  src: url('/fonts/Thunder-ThinHC.otf');
+}
+
+@font-face {
+  font-family: 'Thunder';
+  font-weight: 200;
+  src: url('/fonts/Thunder-ExtraLightHC.otf');
+}
+
+@font-face {
+  font-family: 'Thunder';
+  font-weight: 800;
+  src: url('/fonts/Thunder-ExtraBoldLC.otf');
+}
+
+body {
+  background-color: black;
+  font-family: 'Thunder', sans-serif;
+  font-weight: 100;
+  color: white;
 }
