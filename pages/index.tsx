@@ -3,6 +3,11 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
 import OffCanvasNav from '../components/OffCanvasNav'
+import aboutPicture from '../public/pictures/about.png'
+import contactPicture from '../public/pictures/contact.png'
+import merchPicture from '../public/pictures/merch.png'
+import subscribePicture from '../public/pictures/subscribe.png'
+import tourPicture from '../public/pictures/tour.png'
 
 const pictureLoop = ['about', 'tour', 'merch', 'contact', 'subscribe'] as const
 type PictureName = 'about' | 'tour' | 'merch' | 'contact' | 'subscribe'
@@ -15,7 +20,7 @@ export default function Home() {
   }>({ curr: null, prev: 'tour' }) // cheats
 
   useEffect(() => {
-    setTimeout(
+    const timeout = setTimeout(
       () => {
         setActivePicture(({ curr, prev }) => {
           if (curr !== null) return { curr: null, prev }
@@ -26,16 +31,18 @@ export default function Home() {
       },
       activePicture.curr === null ? 750 : 2700
     )
+
+    return () => clearTimeout(timeout)
   }, [activePicture])
 
   return (
     <>
-      <main className="relative flex flex-col justify-between items-center w-screen h-screen px-6 container py-10 overflow-hidden m-auto md:hidden">
+      <main className="relative flex flex-col justify-between items-center w-screen h-screen container overflow-hidden py-10 m-auto md:hidden">
         <div
           className={clsx(
             'text-4xl font-extralight text-center relative w-full',
-            "before:absolute before:content-[''] before:border-white before:border-b-2 before:border-solid before:w-[30%] sm:before:w-[40%] before:left-0 before:top-1/2 before:-z-10 before:-translate-y-1",
-            "after:absolute after:content-[''] after:border-white after:border-b-2 after:border-solid after:w-[30%] sm:after:w-[40%] after:right-0 after:top-1/2 after:-z-10 after:-translate-y-1"
+            "before:absolute before:content-[''] before:border-white before:border-b-2 before:border-solid before:w-[30%] sm:before:w-[40%] before:left-0 before:top-1/2 before:-z-10 before:-translate-y-1 before:ml-6",
+            "after:absolute after:content-[''] after:border-white after:border-b-2 after:border-solid after:w-[30%] sm:after:w-[40%] after:right-0 after:top-1/2 after:-z-10 after:-translate-y-1 after:mr-6"
           )}
         >
           <button
@@ -50,7 +57,7 @@ export default function Home() {
           <br />
           DAYS
         </h1>
-        <nav className="flex w-full justify-between gap-1">
+        <nav className="flex w-full justify-between gap-1 px-6">
           <a href="https://www.instagram.com/ditchdays/">
             <Image
               src="/logos/instagram-logo.png"
@@ -93,55 +100,45 @@ export default function Home() {
           </a>
         </nav>
         {activePicture.curr === 'about' && (
-          <div className="absolute -z-20 right-0 top-6">
+          <div className="absolute -z-20 -right-6 top-6">
             <Image
-              src="/pictures/about.png"
-              width={369}
-              height={341}
+              src={aboutPicture}
               alt="Background picture TODO"
               role="presentation"
             />
           </div>
         )}
         {activePicture.curr === 'contact' && (
-          <div className="absolute -z-20 right-0 -bottom-2">
+          <div className="absolute -z-20 -right-6 -bottom-2">
             <Image
-              src="/pictures/contact.png"
-              width={344}
-              height={464}
+              src={contactPicture}
               alt="Background picture TODO"
               role="presentation"
             />
           </div>
         )}
         {activePicture.curr === 'merch' && (
-          <div className="absolute -z-20 left-0 top-1/2">
+          <div className="absolute -z-20 -left-6 top-1/4">
             <Image
-              src="/pictures/merch.png"
-              width={296}
-              height={470}
+              src={merchPicture}
               alt="Background picture TODO"
               role="presentation"
             />
           </div>
         )}
         {activePicture.curr === 'subscribe' && (
-          <div className="absolute -z-20 left-0 top-0">
+          <div className="absolute -z-20 -left-6 top-0">
             <Image
-              src="/pictures/subscribe.png"
-              width={326}
-              height={570}
+              src={subscribePicture}
               alt="Background picture TODO"
               role="presentation"
             />
           </div>
         )}
         {activePicture.curr === 'tour' && (
-          <div className="absolute -z-20 left-0 -bottom-2">
+          <div className="absolute -z-20 -left-6 -bottom-2">
             <Image
-              src="/pictures/tour.png"
-              width={357}
-              height={501}
+              src={tourPicture}
               alt="Background picture TODO"
               role="presentation"
             />
