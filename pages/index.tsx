@@ -109,7 +109,7 @@ export default function Home() {
               src={aboutPicture}
               width={511}
               height={341}
-              quality={80}
+              quality={50}
               alt="Background picture TODO"
               role="presentation"
             />
@@ -123,7 +123,7 @@ export default function Home() {
               src={tourPicture}
               width={452}
               height={586}
-              quality={80}
+              quality={50}
               alt="Background picture TODO"
               role="presentation"
             />
@@ -137,7 +137,7 @@ export default function Home() {
               src={merchPicture}
               width={313}
               height={470}
-              quality={80}
+              quality={50}
               alt="Background picture TODO"
               role="presentation"
             />
@@ -151,7 +151,7 @@ export default function Home() {
               src={contactPicture}
               width={369}
               height={553}
-              quality={80}
+              quality={50}
               alt="Background picture TODO"
               role="presentation"
             />
@@ -165,7 +165,7 @@ export default function Home() {
               src={subscribePicture}
               width={379}
               height={570}
-              quality={80}
+              quality={50}
               alt="Background picture TODO"
               role="presentation"
             />
