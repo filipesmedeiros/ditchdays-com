@@ -17,23 +17,23 @@ export default function Home() {
   const [activePicture, setActivePicture] = useState<{
     curr: PictureName | null
     prev: PictureName
-  }>({ curr: 'about', prev: 'about' }) // cheats
+  }>({ curr: null, prev: 'subscribe' }) // cheats
 
-  //   useEffect(() => {
-  //     const timeout = setTimeout(
-  //       () => {
-  //         setActivePicture(({ curr, prev }) => {
-  //           if (curr !== null) return { curr: null, prev }
-  //           const prevIndex = pictureLoop.indexOf(prev)
-  //           const currIndex = (prevIndex + 1) % 5
-  //           return { prev: pictureLoop[currIndex], curr: pictureLoop[currIndex] }
-  //         })
-  //       },
-  //       activePicture.curr === null ? 750 : 2700
-  //     )
+  useEffect(() => {
+    const timeout = setTimeout(
+      () => {
+        setActivePicture(({ curr, prev }) => {
+          if (curr !== null) return { curr: null, prev }
+          const prevIndex = pictureLoop.indexOf(prev)
+          const currIndex = (prevIndex + 1) % 5
+          return { prev: pictureLoop[currIndex], curr: pictureLoop[currIndex] }
+        })
+      },
+      activePicture.curr === null ? 750 : 2700
+    )
 
-  //     return () => clearTimeout(timeout)
-  //   }, [activePicture])
+    return () => clearTimeout(timeout)
+  }, [activePicture])
 
   return (
     <>
