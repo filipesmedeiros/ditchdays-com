@@ -42,7 +42,7 @@ export default function Home() {
 
   return (
     <>
-      <main className="relative w-screen h-screen overflow-hidden md:hidden">
+      <main className="relative w-full h-full overflow-hidden md:hidden">
         <div className="flex flex-col justify-between items-center py-10 w-full h-full container">
           <div
             className={clsx(
@@ -65,19 +65,34 @@ export default function Home() {
           </h1>
           <nav className="flex w-full justify-between gap-1 px-6">
             <a href="https://www.instagram.com/ditchdays/">
-              <Image priority src={instagramLogo} alt="Instagram logo" />
+              <Image
+                priority
+                quality={100}
+                src={instagramLogo}
+                alt="Instagram logo"
+              />
             </a>
             <a href="https://open.spotify.com/artist/3B3nEiNlMRAHeSF9hfVyi2">
-              <Image priority src={spotifyLogo} alt="Spotify logo" />
+              <Image
+                priority
+                quality={100}
+                src={spotifyLogo}
+                alt="Spotify logo"
+              />
             </a>
             <a href="https://music.apple.com/us/artist/ditch-days/1091974089">
-              <Image priority src={applemusicLogo} alt="Apple Music logo" />
+              <Image
+                priority
+                quality={100}
+                src={applemusicLogo}
+                alt="Apple Music logo"
+              />
             </a>
             <a href="https://www.instagram.com/ditchdays/">
-              <Image priority src={tidalLogo} alt="Tidal logo" />
+              <Image priority quality={100} src={tidalLogo} alt="Tidal logo" />
             </a>
             <a href="https://ditchdays.bandcamp.com/">
-              <Image priority src={bcLogo} alt="Bandcamp logo" />
+              <Image priority quality={100} src={bcLogo} alt="Bandcamp logo" />
             </a>
           </nav>
         </div>
