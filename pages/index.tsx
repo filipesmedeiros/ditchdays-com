@@ -4,9 +4,14 @@ import { useEffect, useState } from 'react'
 
 import OffCanvasNav from '../components/OffCanvasNav'
 import aboutPicture from '../public/pictures/about.jpg'
+import applemusicLogo from '../public/pictures/applemusic-logo.png'
+import bcLogo from '../public/pictures/bc-logo.png'
 import contactPicture from '../public/pictures/contact.jpg'
+import instagramLogo from '../public/pictures/instagram-logo.png'
 import merchPicture from '../public/pictures/merch.jpg'
+import spotifyLogo from '../public/pictures/spotify-logo.png'
 import subscribePicture from '../public/pictures/subscribe.jpg'
+import tidalLogo from '../public/pictures/tidal-logo.png'
 import tourPicture from '../public/pictures/tour.jpg'
 
 const pictureLoop = ['about', 'tour', 'merch', 'contact', 'subscribe'] as const
@@ -60,44 +65,19 @@ export default function Home() {
           </h1>
           <nav className="flex w-full justify-between gap-1 px-6">
             <a href="https://www.instagram.com/ditchdays/">
-              <Image
-                src="/logos/instagram-logo.png"
-                width={27}
-                height={27}
-                alt="Instagram logo"
-              />
+              <Image src={instagramLogo} alt="Instagram logo" />
             </a>
             <a href="https://open.spotify.com/artist/3B3nEiNlMRAHeSF9hfVyi2">
-              <Image
-                src="/logos/spotify-logo.png"
-                width={27}
-                height={26}
-                alt="Instagram logo"
-              />
+              <Image src={spotifyLogo} alt="Spotify logo" />
             </a>
             <a href="https://music.apple.com/us/artist/ditch-days/1091974089">
-              <Image
-                src="/logos/applemusic-logo.png"
-                width={27}
-                height={26}
-                alt="Instagram logo"
-              />
+              <Image src={applemusicLogo} alt="Apple Music logo" />
             </a>
             <a href="https://www.instagram.com/ditchdays/">
-              <Image
-                src="/logos/tidal-logo.png"
-                width={33}
-                height={22}
-                alt="Instagram logo"
-              />
+              <Image src={tidalLogo} alt="Tidal logo" />
             </a>
             <a href="https://ditchdays.bandcamp.com/">
-              <Image
-                src="/logos/bc-logo.png"
-                width={62}
-                height={21}
-                alt="Instagram logo"
-              />
+              <Image src={bcLogo} alt="Bandcamp logo" />
             </a>
           </nav>
         </div>
