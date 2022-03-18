@@ -109,7 +109,6 @@ export default function Home() {
         >
           <Image
             priority
-            placeholder="blur"
             src={aboutPicture}
             width={511}
             height={341}
@@ -123,7 +122,7 @@ export default function Home() {
           })}
         >
           <Image
-            placeholder="blur"
+            priority
             src={tourPicture}
             width={452}
             height={586}
@@ -137,7 +136,7 @@ export default function Home() {
           })}
         >
           <Image
-            placeholder="blur"
+            priority
             src={merchPicture}
             width={313}
             height={470}
@@ -151,7 +150,7 @@ export default function Home() {
           })}
         >
           <Image
-            placeholder="blur"
+            priority
             src={contactPicture}
             width={369}
             height={553}
@@ -165,7 +164,7 @@ export default function Home() {
           })}
         >
           <Image
-            placeholder="blur"
+            priority
             src={subscribePicture}
             width={379}
             height={570}
