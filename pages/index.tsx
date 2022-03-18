@@ -101,76 +101,78 @@ export default function Home() {
             </a>
           </nav>
         </div>
-        {activePicture.curr === 'about' && (
-          <div className="absolute -z-20 -right-36 top-6">
-            <Image
-              priority
-              placeholder="blur"
-              src={aboutPicture}
-              width={511}
-              height={341}
-              quality={50}
-              alt="Background picture TODO"
-              role="presentation"
-            />
-          </div>
-        )}
-        {activePicture.curr === 'tour' && (
-          <div className="absolute -z-20 -left-24 -bottom-24">
-            <Image
-              loading="eager"
-              placeholder="blur"
-              src={tourPicture}
-              width={452}
-              height={586}
-              quality={50}
-              alt="Background picture TODO"
-              role="presentation"
-            />
-          </div>
-        )}
-        {activePicture.curr === 'merch' && (
-          <div className="absolute -z-20 -left-6 top-[20%]">
-            <Image
-              loading="eager"
-              placeholder="blur"
-              src={merchPicture}
-              width={313}
-              height={470}
-              quality={50}
-              alt="Background picture TODO"
-              role="presentation"
-            />
-          </div>
-        )}
-        {activePicture.curr === 'contact' && (
-          <div className="absolute -z-20 -right-6 -bottom-24">
-            <Image
-              loading="eager"
-              placeholder="blur"
-              src={contactPicture}
-              width={369}
-              height={553}
-              quality={50}
-              alt="Background picture TODO"
-              role="presentation"
-            />
-          </div>
-        )}
-        {activePicture.curr === 'subscribe' && (
-          <div className="absolute -z-20 -left-14 top-0">
-            <Image
-              loading="eager"
-              placeholder="blur"
-              src={subscribePicture}
-              width={379}
-              height={570}
-              quality={50}
-              alt="Background picture TODO"
-              role="presentation"
-            />
-          </div>
-        )}
+
+        <div
+          className={clsx('absolute -z-20 -right-36 top-6', {
+            hidden: activePicture.curr !== 'about',
+          })}
+        >
+          <Image
+            priority
+            placeholder="blur"
+            src={aboutPicture}
+            width={511}
+            height={341}
+            alt="Background picture TODO"
+            role="presentation"
+          />
+        </div>
+        <div
+          className={clsx('absolute -z-20 -left-24 -bottom-24', {
+            hidden: activePicture.curr !== 'tour',
+          })}
+        >
+          <Image
+            placeholder="blur"
+            src={tourPicture}
+            width={452}
+            height={586}
+            alt="Background picture TODO"
+            role="presentation"
+          />
+        </div>
+        <div
+          className={clsx('absolute -z-20 -left-6 top-[20%]', {
+            hidden: activePicture.curr !== 'merch',
+          })}
+        >
+          <Image
+            placeholder="blur"
+            src={merchPicture}
+            width={313}
+            height={470}
+            alt="Background picture TODO"
+            role="presentation"
+          />
+        </div>
+        <div
+          className={clsx('absolute -z-20 -right-6 -bottom-24', {
+            hidden: activePicture.curr !== 'contact',
+          })}
+        >
+          <Image
+            placeholder="blur"
+            src={contactPicture}
+            width={369}
+            height={553}
+            alt="Background picture TODO"
+            role="presentation"
+          />
+        </div>
+        <div
+          className={clsx('absolute -z-20 -left-14 top-0', {
+            hidden: activePicture.curr !== 'subscribe',
+          })}
+        >
+          <Image
+            placeholder="blur"
+            src={subscribePicture}
+            width={379}
+            height={570}
+            alt="Background picture TODO"
+            role="presentation"
+          />
+        </div>
       </main>
       <OffCanvasNav
         open={offCanvasNavOpen}
