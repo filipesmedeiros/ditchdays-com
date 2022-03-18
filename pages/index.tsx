@@ -34,7 +34,7 @@ export default function Home() {
           return { prev: pictureLoop[currIndex], curr: pictureLoop[currIndex] }
         })
       },
-      activePicture.curr === null ? 750 : 2700
+      activePicture.curr === null ? 400 : 2700
     )
 
     return () => clearTimeout(timeout)
