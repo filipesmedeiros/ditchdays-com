@@ -118,7 +118,7 @@ export default function Home() {
         {activePicture.curr === 'tour' && (
           <div className="absolute -z-20 -left-24 -bottom-24">
             <Image
-              priority
+              loading="eager"
               placeholder="blur"
               src={tourPicture}
               width={452}
@@ -132,7 +132,7 @@ export default function Home() {
         {activePicture.curr === 'merch' && (
           <div className="absolute -z-20 -left-6 top-[20%]">
             <Image
-              priority
+              loading="eager"
               placeholder="blur"
               src={merchPicture}
               width={313}
@@ -146,7 +146,7 @@ export default function Home() {
         {activePicture.curr === 'contact' && (
           <div className="absolute -z-20 -right-6 -bottom-24">
             <Image
-              priority
+              loading="eager"
               placeholder="blur"
               src={contactPicture}
               width={369}
@@ -160,7 +160,7 @@ export default function Home() {
         {activePicture.curr === 'subscribe' && (
           <div className="absolute -z-20 -left-14 top-0">
             <Image
-              priority
+              loading="eager"
               placeholder="blur"
               src={subscribePicture}
               width={379}
