@@ -13,7 +13,7 @@ const links = ['about', 'music', 'tour', 'merch', 'contact', 'subscribe']
 const OffCanvasNav: FC<Props> = ({ open, onClose }) => (
   <div
     className={clsx(
-      'absolute flex flex-col items-center top-0 w-screen h-screen bg-black transition-transform duration-700 py-10',
+      'absolute flex flex-col items-center top-0 w-full h-full bg-black transition-transform duration-700 py-10',
       {
         '-translate-y-full': !open,
       }
