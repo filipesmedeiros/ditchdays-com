@@ -3,15 +3,15 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
 import OffCanvasNav from '../components/OffCanvasNav'
+import applemusicLogo from '../public/logos/applemusic-logo.png'
+import bcLogo from '../public/logos/bc-logo.png'
+import instagramLogo from '../public/logos/instagram-logo.png'
+import spotifyLogo from '../public/logos/spotify-logo.png'
+import tidalLogo from '../public/logos/tidal-logo.png'
 import aboutPicture from '../public/pictures/about.jpg'
-import applemusicLogo from '../public/pictures/applemusic-logo.png'
-import bcLogo from '../public/pictures/bc-logo.png'
 import contactPicture from '../public/pictures/contact.jpg'
-import instagramLogo from '../public/pictures/instagram-logo.png'
 import merchPicture from '../public/pictures/merch.jpg'
-import spotifyLogo from '../public/pictures/spotify-logo.png'
 import subscribePicture from '../public/pictures/subscribe.jpg'
-import tidalLogo from '../public/pictures/tidal-logo.png'
 import tourPicture from '../public/pictures/tour.jpg'
 
 const pictureLoop = ['about', 'tour', 'merch', 'contact', 'subscribe'] as const
@@ -65,19 +65,19 @@ export default function Home() {
           </h1>
           <nav className="flex w-full justify-between gap-1 px-6">
             <a href="https://www.instagram.com/ditchdays/">
-              <Image src={instagramLogo} alt="Instagram logo" />
+              <Image priority src={instagramLogo} alt="Instagram logo" />
             </a>
             <a href="https://open.spotify.com/artist/3B3nEiNlMRAHeSF9hfVyi2">
-              <Image src={spotifyLogo} alt="Spotify logo" />
+              <Image priority src={spotifyLogo} alt="Spotify logo" />
             </a>
             <a href="https://music.apple.com/us/artist/ditch-days/1091974089">
-              <Image src={applemusicLogo} alt="Apple Music logo" />
+              <Image priority src={applemusicLogo} alt="Apple Music logo" />
             </a>
             <a href="https://www.instagram.com/ditchdays/">
-              <Image src={tidalLogo} alt="Tidal logo" />
+              <Image priority src={tidalLogo} alt="Tidal logo" />
             </a>
             <a href="https://ditchdays.bandcamp.com/">
-              <Image src={bcLogo} alt="Bandcamp logo" />
+              <Image priority src={bcLogo} alt="Bandcamp logo" />
             </a>
           </nav>
         </div>
