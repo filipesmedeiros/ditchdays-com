@@ -3,11 +3,11 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
 import OffCanvasNav from '../components/OffCanvasNav'
-import aboutPicture from '../public/pictures/about.png'
-import contactPicture from '../public/pictures/contact.png'
-import merchPicture from '../public/pictures/merch.png'
-import subscribePicture from '../public/pictures/subscribe.png'
-import tourPicture from '../public/pictures/tour.png'
+import aboutPicture from '../public/pictures/about.jpg'
+import contactPicture from '../public/pictures/contact.jpg'
+import merchPicture from '../public/pictures/merch.jpg'
+import subscribePicture from '../public/pictures/subscribe.jpg'
+import tourPicture from '../public/pictures/tour.jpg'
 
 const pictureLoop = ['about', 'tour', 'merch', 'contact', 'subscribe'] as const
 type PictureName = 'about' | 'tour' | 'merch' | 'contact' | 'subscribe'
