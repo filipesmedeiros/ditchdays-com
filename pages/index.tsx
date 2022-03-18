@@ -101,66 +101,62 @@ export default function Home() {
             </a>
           </nav>
         </div>
-        <div className="absolute left-0 top-0 w-full h-full -z-20">
-          <div className="relative w-full h-full">
-            {activePicture.curr === 'about' && (
-              <div className="absolute -right-36 top-6">
-                <Image
-                  priority
-                  src={aboutPicture}
-                  width={511}
-                  height={341}
-                  alt="Background picture TODO"
-                  role="presentation"
-                />
-              </div>
-            )}
-            {activePicture.curr === 'tour' && (
-              <div className="absolute -left-24 -bottom-24">
-                <Image
-                  src={tourPicture}
-                  width={452}
-                  height={586}
-                  alt="Background picture TODO"
-                  role="presentation"
-                />
-              </div>
-            )}
-            {activePicture.curr === 'merch' && (
-              <div className="absolute -left-6 top-[20%]">
-                <Image
-                  src={merchPicture}
-                  width={313}
-                  height={470}
-                  alt="Background picture TODO"
-                  role="presentation"
-                />
-              </div>
-            )}
-            {activePicture.curr === 'contact' && (
-              <div className="absolute -right-6 -bottom-24">
-                <Image
-                  src={contactPicture}
-                  width={369}
-                  height={553}
-                  alt="Background picture TODO"
-                  role="presentation"
-                />
-              </div>
-            )}
-            {activePicture.curr === 'subscribe' && (
-              <div className="absolute -left-14 top-0">
-                <Image
-                  src={subscribePicture}
-                  width={379}
-                  height={570}
-                  alt="Background picture TODO"
-                  role="presentation"
-                />
-              </div>
-            )}
+        {activePicture.curr === 'about' && (
+          <div className="absolute -z-20 -right-36 top-6">
+            <Image
+              priority
+              src={aboutPicture}
+              width={511}
+              height={341}
+              alt="Background picture TODO"
+              role="presentation"
+            />
           </div>
-        </div>
+        )}
+        {activePicture.curr === 'tour' && (
+          <div className="absolute -z-20 -left-24 -bottom-24">
+            <Image
+              src={tourPicture}
+              width={452}
+              height={586}
+              alt="Background picture TODO"
+              role="presentation"
+            />
+          </div>
+        )}
+        {activePicture.curr === 'merch' && (
+          <div className="absolute -z-20 -left-6 top-[20%]">
+            <Image
+              src={merchPicture}
+              width={313}
+              height={470}
+              alt="Background picture TODO"
+              role="presentation"
+            />
+          </div>
+        )}
+        {activePicture.curr === 'contact' && (
+          <div className="absolute -z-20 -right-6 -bottom-24">
+            <Image
+              src={contactPicture}
+              width={369}
+              height={553}
+              alt="Background picture TODO"
+              role="presentation"
+            />
+          </div>
+        )}
+        {activePicture.curr === 'subscribe' && (
+          <div className="absolute -z-20 -left-14 top-0">
+            <Image
+              src={subscribePicture}
+              width={379}
+              height={570}
+              alt="Background picture TODO"
+              role="presentation"
+            />
+          </div>
+        )}
       </main>
       <OffCanvasNav
         open={offCanvasNavOpen}
