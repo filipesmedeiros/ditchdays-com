@@ -3,13 +3,82 @@ import { NextPage } from 'next'
 import Image from 'next/image'
 import { useEffect } from 'react'
 
+import AlbumCover from '../components/AlbumCover'
 import { useOffCanvasNavContext } from '../hooks/useOffCanvasNav'
 import applemusicLogo from '../public/logos/applemusic-logo.png'
 import bcLogo from '../public/logos/bc-logo.png'
 import instagramLogo from '../public/logos/instagram-logo.png'
 import spotifyLogo from '../public/logos/spotify-logo.png'
 import tidalLogo from '../public/logos/tidal-logo.png'
-import contactPicture from '../public/pictures/contact.jpg'
+import andyKaufmanCover from '../public/pictures/andy-kaufman.jpg'
+import baltimoreCover from '../public/pictures/baltimore.jpg'
+import downtownCover from '../public/pictures/downtown.jpg'
+import evenIfYouKnowCover from '../public/pictures/even-if-you-know.png'
+import liquidSpringsCover from '../public/pictures/liquid-springs.jpg'
+import sethRogenCover from '../public/pictures/seth-rogen.png'
+
+const albums = [
+  {
+    image: baltimoreCover,
+    alt: '"Baltimore" cover',
+    links: {
+      appleMusic: 'a',
+      tidal: 'b',
+      spotify: 'c',
+      bandcamp: 'd',
+    },
+  },
+  {
+    image: andyKaufmanCover,
+    alt: '"Andy Kaufman" cover',
+    links: {
+      appleMusic: 'e',
+      tidal: 'f',
+      spotify: 'g',
+      bandcamp: 'h',
+    },
+  },
+  {
+    image: evenIfYouKnowCover,
+    alt: '"Even If You Know" cover',
+    links: {
+      appleMusic: 'i',
+      tidal: 'j',
+      spotify: 'k',
+      bandcamp: 'l',
+    },
+  },
+  {
+    image: sethRogenCover,
+    alt: '"Seth Rogen" cover',
+    links: {
+      appleMusic: 'm',
+      tidal: 'n',
+      spotify: 'o',
+      bandcamp: 'p',
+    },
+  },
+  {
+    image: downtownCover,
+    alt: '"Downtown" cover',
+    links: {
+      appleMusic: 'q',
+      tidal: 'r',
+      spotify: 's',
+      bandcamp: 't',
+    },
+  },
+  {
+    image: liquidSpringsCover,
+    alt: '"Liquid Springs" cover',
+    links: {
+      appleMusic: 'u',
+      tidal: 'v',
+      spotify: 'w',
+      bandcamp: 'x',
+    },
+  },
+]
 
 const Tour: NextPage = () => {
   const { setOpen } = useOffCanvasNavContext()
@@ -17,8 +86,8 @@ const Tour: NextPage = () => {
 
   return (
     <>
-      <main className="relative w-full h-full overflow-hidden md:hidden">
-        <div className="flex flex-col justify-between items-center py-10 w-full h-full container">
+      <main className="md:hidden">
+        <div className="flex flex-col items-center py-10">
           <div
             className={clsx(
               'text-4xl font-extralight text-center relative w-full',
@@ -34,38 +103,15 @@ const Tour: NextPage = () => {
             </button>
           </div>
 
-          <div className="self-start flex flex-col gap-6 pl-16 pt-80 text-2xl">
-            <div>
-              <p>
-                Booking & Press{' '}
-                <span className="text-orange">International</span>
-              </p>
-              <p className="font-extralight">
-                <a href="mailto:general@ditch-days.com">
-                  general@ditch-days.com
-                </a>
-              </p>
-            </div>
-            <div>
-              <p>
-                Booking <span className="text-green">Portugal</span>
-              </p>
-              <p className="font-extralight">
-                <a href="mailto:joao.vaz.silva@fproducao.pt">
-                  joao.vaz.silva@fproducao.pt
-                </a>
-              </p>
-            </div>
-            <div>
-              <p>
-                Press <span className="text-green">Portugal</span>
-              </p>
-              <p className="font-extralight">
-                <a href="mailto:teresa.sequeira@fproducao.pt">
-                  teresa.sequeira@fproducao.pt
-                </a>
-              </p>
-            </div>
+          <div className="flex flex-col gap-10 px-8 container pt-6 pb-16">
+            {albums.map(({ image, alt, links }) => (
+              <AlbumCover
+                key={links.appleMusic}
+                image={image}
+                alt={alt}
+                links={links}
+              />
+            ))}
           </div>
 
           <nav className="flex w-full justify-between gap-1 px-6">
@@ -100,17 +146,6 @@ const Tour: NextPage = () => {
               <Image priority quality={100} src={bcLogo} alt="Bandcamp logo" />
             </a>
           </nav>
-        </div>
-
-        <div className="absolute -z-20 -right-6 top-24">
-          <Image
-            priority
-            src={contactPicture}
-            width={269}
-            height={403}
-            alt="Background picture TODO"
-            role="presentation"
-          />
         </div>
       </main>
 
