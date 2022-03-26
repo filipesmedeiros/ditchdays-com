@@ -19,22 +19,24 @@ const Tour: NextPage = () => {
     <>
       <main className="relative w-full h-full overflow-hidden md:hidden">
         <div className="flex flex-col justify-between items-center py-10 w-full h-full container">
-          <div
-            className={clsx(
-              'text-4xl font-extralight text-center relative w-full',
-              "before:absolute before:content-[''] before:border-white before:border-b-2 before:border-solid before:w-[30%] sm:before:w-[40%] before:left-0 before:top-1/2 before:-z-10 before:-translate-y-1 before:ml-6",
-              "after:absolute after:content-[''] after:border-white after:border-b-2 after:border-solid after:w-[30%] sm:after:w-[40%] after:right-0 after:top-1/2 after:-z-10 after:-translate-y-1 after:mr-6"
-            )}
-          >
-            <button
-              className="hover:cursor-pointer font-extralight"
-              onClick={() => setOpen(true)}
+          <div className="w-full flex-1">
+            <div
+              className={clsx(
+                'text-4xl font-extralight text-center relative w-full',
+                "before:absolute before:content-[''] before:border-white before:border-b-2 before:border-solid before:w-[30%] sm:before:w-[40%] before:left-0 before:top-1/2 before:-z-10 before:-translate-y-1 before:ml-6",
+                "after:absolute after:content-[''] after:border-white after:border-b-2 after:border-solid after:w-[30%] sm:after:w-[40%] after:right-0 after:top-1/2 after:-z-10 after:-translate-y-1 after:mr-6"
+              )}
             >
-              MENU
-            </button>
+              <button
+                className="hover:cursor-pointer font-extralight"
+                onClick={() => setOpen(true)}
+              >
+                MENU
+              </button>
+            </div>
           </div>
 
-          <div className="self-start flex flex-col gap-10 pl-16 pt-56">
+          <div className="self-start flex flex-col gap-10 pl-16">
             <h1 className="text-5xl text-orange">MERCH & CLOTHES</h1>
             <span className="text-8xl font-extralight self-start">
               COMING
@@ -43,7 +45,7 @@ const Tour: NextPage = () => {
             </span>
           </div>
 
-          <nav className="flex w-full justify-between gap-1 px-6">
+          <nav className="flex w-full justify-between gap-1 px-6 pt-16">
             <a href="https://www.instagram.com/ditchdays/">
               <Image
                 priority
