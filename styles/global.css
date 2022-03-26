@@ -31,8 +31,8 @@ html {
 body {
   background-color: black;
   font-family: 'Thunder', sans-serif;
-  font-weight: 100;
   color: white;
+  background-color: #1f1e1f;
 }
 
 div#__next {
