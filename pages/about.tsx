@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import { NextPage } from 'next'
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 import OffCanvasNav from '../components/OffCanvasNav'
 import applemusicLogo from '../public/logos/applemusic-logo.png'
@@ -10,41 +10,22 @@ import instagramLogo from '../public/logos/instagram-logo.png'
 import spotifyLogo from '../public/logos/spotify-logo.png'
 import tidalLogo from '../public/logos/tidal-logo.png'
 import aboutPicture from '../public/pictures/about.jpg'
-import contactPicture from '../public/pictures/contact.jpg'
-import merchPicture from '../public/pictures/merch.jpg'
-import subscribePicture from '../public/pictures/subscribe.jpg'
-import tourPicture from '../public/pictures/tour.jpg'
 
-const pictureLoop = ['about', 'tour', 'merch', 'contact', 'subscribe'] as const
-type PictureName = 'about' | 'tour' | 'merch' | 'contact' | 'subscribe'
-
-const Home: NextPage = () => {
+const About: NextPage = () => {
   const [offCanvasNavOpen, setOffCanvasNavOpen] = useState(false)
-  const [activePicture, setActivePicture] = useState<{
-    curr: PictureName | null
-    prev: PictureName
-  }>({ curr: null, prev: 'subscribe' }) // cheats
-
-  useEffect(() => {
-    const timeout = setTimeout(
-      () => {
-        setActivePicture(({ curr, prev }) => {
-          if (curr !== null) return { curr: null, prev }
-          const prevIndex = pictureLoop.indexOf(prev)
-          const currIndex = (prevIndex + 1) % 5
-          return { prev: pictureLoop[currIndex], curr: pictureLoop[currIndex] }
-        })
-      },
-      activePicture.curr === null ? 750 : 2700
-    )
-
-    return () => clearTimeout(timeout)
-  }, [activePicture])
 
   return (
     <>
-      <main className="relative w-full h-full overflow-hidden md:hidden">
-        <div className="flex flex-col justify-between items-center py-10 w-full h-full container">
+      <main
+        className={clsx('relative overflow-x-hidden md:hidden', {
+          'overflow-y-hidden h-screen': offCanvasNavOpen,
+        })}
+      >
+        <div
+          className={clsx('flex flex-col items-center py-10 container', {
+            'h-100': offCanvasNavOpen,
+          })}
+        >
           <div
             className={clsx(
               'text-4xl font-extralight text-center relative w-full',
@@ -59,11 +40,27 @@ const Home: NextPage = () => {
               MENU
             </button>
           </div>
-          <h1 className="text-center text-9xl font-extrabold leading-[0.8]">
-            DITCH
-            <br />
-            DAYS
-          </h1>
+
+          <div className="text-3xl px-8 font-normal pt-48 pb-16">
+            <p className="py-4">
+              “In the past couple of years, we’ve been stuck inside ourselves.
+              Left some songs in the drawer, cancelled a tour around Europe. It
+              became quite easy to just let life happen and not think about what
+              we wanted to say.
+            </p>
+            <p className="py-4">
+              The best way we found to get back to the place we were missing was
+              to start writing together again. Turns out, we haven’t been
+              sitting idly by. We’ve been listening. Traveling. Exploring.
+              Finding something new. And that is our{' '}
+              <span className="text-green">LP #2.</span>”
+            </p>
+            <p className="py-4">
+              <span className="text-orange">DITCH DAYS</span> is Crespo,
+              Guilherme and Luis. Live since 2016.
+            </p>
+          </div>
+
           <nav className="flex w-full justify-between gap-1 px-6">
             <a href="https://www.instagram.com/ditchdays/">
               <Image
@@ -98,72 +95,12 @@ const Home: NextPage = () => {
           </nav>
         </div>
 
-        <div
-          className={clsx('absolute -z-20 -right-36 top-6', {
-            hidden: activePicture.curr !== 'about',
-          })}
-        >
+        <div className="absolute -z-20 -right-36 top-6">
           <Image
             priority
             src={aboutPicture}
             width={511}
             height={341}
-            alt="Background picture TODO"
-            role="presentation"
-          />
-        </div>
-        <div
-          className={clsx('absolute -z-20 -left-24 -bottom-24', {
-            hidden: activePicture.curr !== 'tour',
-          })}
-        >
-          <Image
-            priority
-            src={tourPicture}
-            width={452}
-            height={586}
-            alt="Background picture TODO"
-            role="presentation"
-          />
-        </div>
-        <div
-          className={clsx('absolute -z-20 -left-6 top-[20%]', {
-            hidden: activePicture.curr !== 'merch',
-          })}
-        >
-          <Image
-            priority
-            src={merchPicture}
-            width={313}
-            height={470}
-            alt="Background picture TODO"
-            role="presentation"
-          />
-        </div>
-        <div
-          className={clsx('absolute -z-20 -right-6 -bottom-24', {
-            hidden: activePicture.curr !== 'contact',
-          })}
-        >
-          <Image
-            priority
-            src={contactPicture}
-            width={369}
-            height={553}
-            alt="Background picture TODO"
-            role="presentation"
-          />
-        </div>
-        <div
-          className={clsx('absolute -z-20 -left-14 top-0', {
-            hidden: activePicture.curr !== 'subscribe',
-          })}
-        >
-          <Image
-            priority
-            src={subscribePicture}
-            width={379}
-            height={570}
             alt="Background picture TODO"
             role="presentation"
           />
@@ -190,4 +127,4 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export default About

@@ -12,6 +12,12 @@
 
 @font-face {
   font-family: 'Thunder';
+  font-weight: 400;
+  src: url('/fonts/Thunder-LC.otf');
+}
+
+@font-face {
+  font-family: 'Thunder';
   font-weight: 800;
   src: url('/fonts/Thunder-ExtraBoldLC.otf');
 }
