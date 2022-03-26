@@ -1,9 +1,9 @@
 import clsx from 'clsx'
 import { NextPage } from 'next'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useEffect } from 'react'
 
-import OffCanvasNav from '../components/OffCanvasNav'
+import { useOffCanvasNavContext } from '../hooks/useOffCanvasNav'
 import applemusicLogo from '../public/logos/applemusic-logo.png'
 import bcLogo from '../public/logos/bc-logo.png'
 import instagramLogo from '../public/logos/instagram-logo.png'
@@ -12,7 +12,8 @@ import tidalLogo from '../public/logos/tidal-logo.png'
 import tourPicture from '../public/pictures/tour.jpg'
 
 const Tour: NextPage = () => {
-  const [offCanvasNavOpen, setOffCanvasNavOpen] = useState(false)
+  const { setOpen } = useOffCanvasNavContext()
+  useEffect(() => setOpen(false), [setOpen])
 
   return (
     <>
@@ -27,7 +28,7 @@ const Tour: NextPage = () => {
           >
             <button
               className="hover:cursor-pointer font-extralight"
-              onClick={() => setOffCanvasNavOpen(true)}
+              onClick={() => setOpen(true)}
             >
               MENU
             </button>
@@ -87,10 +88,6 @@ const Tour: NextPage = () => {
           />
         </div>
       </main>
-      <OffCanvasNav
-        open={offCanvasNavOpen}
-        onClose={() => setOffCanvasNavOpen(false)}
-      />
 
       <main className="flex-col gap-6 justify-center items-center w-screen h-screen px-6 container py-10 m-auto overflow-hidden hidden md:flex">
         <h1 className="text-center text-9xl font-extrabold leading-[0.8]">
