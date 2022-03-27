@@ -1,3 +1,5 @@
+import clsx from 'clsx'
+import { useRouter } from 'next/router'
 import { FC, useState } from 'react'
 
 import { OffCanvasNavContextProvider } from '../hooks/useOffCanvasNav'
@@ -8,10 +10,19 @@ import SocialLinks from './SocialLinks'
 
 const Layout: FC = ({ children }) => {
   const [isOpen, setOpen] = useState(false)
+  const { pathname } = useRouter()
+  const hideOverflow = pathname !== '/music' && pathname !== '/about'
 
   return (
     <OffCanvasNavContextProvider isOpen={isOpen} setOpen={setOpen}>
-      <div className="flex flex-col py-10 md:hidden w-full h-full relative overflow-x-hidden">
+      <div
+        className={clsx(
+          'flex flex-col md:hidden w-full h-full relative overflow-x-hidden',
+          {
+            'overflow-y-hidden': hideOverflow,
+          }
+        )}
+      >
         <MenuBar />
         <main className="flex-1">{children}</main>
         <SocialLinks />

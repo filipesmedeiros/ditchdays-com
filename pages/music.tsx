@@ -90,7 +90,7 @@ const Tour: NextPage = () => {
   useEffect(() => setOpen(false), [setOpen])
 
   return (
-    <div className="flex flex-col gap-4 px-8 container py-6">
+    <div className="flex flex-col gap-4 px-8 container pt-6 pb-20">
       {albums.map(({ image, alt, links }) => (
         <AlbumCover
           key={links.appleMusic}
