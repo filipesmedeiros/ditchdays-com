@@ -1,15 +1,8 @@
-import clsx from 'clsx'
 import { NextPage } from 'next'
-import Image from 'next/image'
 import { useEffect } from 'react'
 
 import AlbumCover from '../components/AlbumCover'
 import { useOffCanvasNavContext } from '../hooks/useOffCanvasNav'
-import applemusicLogo from '../public/logos/applemusic-logo.png'
-import bcLogo from '../public/logos/bc-logo.png'
-import instagramLogo from '../public/logos/instagram-logo.png'
-import spotifyLogo from '../public/logos/spotify-logo.png'
-import tidalLogo from '../public/logos/tidal-logo.png'
 import andyKaufmanCover from '../public/pictures/andy-kaufman.jpg'
 import baltimoreCover from '../public/pictures/baltimore.jpg'
 import downtownCover from '../public/pictures/downtown.jpg'
@@ -22,60 +15,72 @@ const albums = [
     image: baltimoreCover,
     alt: '"Baltimore" cover',
     links: {
-      appleMusic: 'a',
+      appleMusic:
+        'https://music.apple.com/us/album/andy-kaufman/1499997845?i=1499998018',
       tidal: 'b',
-      spotify: 'c',
-      bandcamp: 'd',
+      spotify:
+        'https://open.spotify.com/track/3PXxZHuWxwJcU3RBmd0dDk?si=02ed8f3c6c64407d',
+      bandcamp: 'https://ditchdays.bandcamp.com/track/baltimore',
     },
   },
   {
     image: andyKaufmanCover,
     alt: '"Andy Kaufman" cover',
     links: {
-      appleMusic: 'e',
+      appleMusic:
+        'https://music.apple.com/us/album/andy-kaufman/1495462957?i=1495462984',
       tidal: 'f',
-      spotify: 'g',
-      bandcamp: 'h',
+      spotify:
+        'https://open.spotify.com/track/5l9qqi0Cdy5XAWvpI4iNXT?si=f3e5d2f99ae6443b',
+      bandcamp: 'https://ditchdays.bandcamp.com/track/andy-kaufman',
     },
   },
   {
     image: evenIfYouKnowCover,
     alt: '"Even If You Know" cover',
     links: {
-      appleMusic: 'i',
+      appleMusic:
+        'https://music.apple.com/us/album/even-if-you-know-feat-terry-vs-tori/1454591008?i=1454591023',
       tidal: 'j',
-      spotify: 'k',
-      bandcamp: 'l',
+      spotify:
+        'https://open.spotify.com/track/28FvBbHEcrmowPsvWzaUbE?si=5af79b7f7b5d4595',
+      bandcamp:
+        'https://ditchdays.bandcamp.com/track/even-if-you-know-feat-terry-vs-tori-2',
     },
   },
   {
     image: sethRogenCover,
     alt: '"Seth Rogen" cover',
     links: {
-      appleMusic: 'm',
+      appleMusic:
+        'https://music.apple.com/us/album/seth-rogen/1437141767?i=1437141780',
       tidal: 'n',
-      spotify: 'o',
-      bandcamp: 'p',
+      spotify:
+        'https://open.spotify.com/track/4mbZMRJ1YWzJQZ8QuzcGl5?si=ed2a8324776c49e0',
+      bandcamp: 'https://ditchdays.bandcamp.com/track/seth-rogen',
     },
   },
   {
     image: downtownCover,
     alt: '"Downtown" cover',
     links: {
-      appleMusic: 'q',
+      appleMusic:
+        'https://music.apple.com/us/album/downtown-feat-calcut%C3%A1/1376080708?i=1376080824',
       tidal: 'r',
-      spotify: 's',
-      bandcamp: 't',
+      spotify:
+        'https://open.spotify.com/track/7IyKYl4L3Zg3rPAomXjhKe?si=53100c81dc104cac',
+      bandcamp: 'https://ditchdays.bandcamp.com/track/downtown',
     },
   },
   {
     image: liquidSpringsCover,
     alt: '"Liquid Springs" cover',
     links: {
-      appleMusic: 'u',
+      appleMusic: 'https://music.apple.com/us/album/liquid-springs/1151460681',
       tidal: 'v',
-      spotify: 'w',
-      bandcamp: 'x',
+      spotify:
+        'https://open.spotify.com/album/6218T8YSaVsF40zDPSBkRH?si=HcN1McyeSUS6KzdhL27z_w',
+      bandcamp: 'https://ditchdays.bandcamp.com/album/liquid-springs',
     },
   },
 ]
@@ -85,83 +90,16 @@ const Tour: NextPage = () => {
   useEffect(() => setOpen(false), [setOpen])
 
   return (
-    <>
-      <main className="md:hidden">
-        <div className="flex flex-col items-center py-10">
-          <div
-            className={clsx(
-              'text-4xl font-extralight text-center relative w-full',
-              "before:absolute before:content-[''] before:border-white before:border-b-2 before:border-solid before:w-[30%] sm:before:w-[40%] before:left-0 before:top-1/2 before:-z-10 before:-translate-y-1 before:ml-6",
-              "after:absolute after:content-[''] after:border-white after:border-b-2 after:border-solid after:w-[30%] sm:after:w-[40%] after:right-0 after:top-1/2 after:-z-10 after:-translate-y-1 after:mr-6"
-            )}
-          >
-            <button
-              className="hover:cursor-pointer font-extralight"
-              onClick={() => setOpen(true)}
-            >
-              MENU
-            </button>
-          </div>
-
-          <div className="flex flex-col gap-10 px-8 container pt-6 pb-16">
-            {albums.map(({ image, alt, links }) => (
-              <AlbumCover
-                key={links.appleMusic}
-                image={image}
-                alt={alt}
-                links={links}
-              />
-            ))}
-          </div>
-
-          <nav className="flex w-full justify-between gap-1 px-6">
-            <a href="https://www.instagram.com/ditchdays/">
-              <Image
-                priority
-                quality={100}
-                src={instagramLogo}
-                alt="Instagram logo"
-              />
-            </a>
-            <a href="https://open.spotify.com/artist/3B3nEiNlMRAHeSF9hfVyi2">
-              <Image
-                priority
-                quality={100}
-                src={spotifyLogo}
-                alt="Spotify logo"
-              />
-            </a>
-            <a href="https://music.apple.com/us/artist/ditch-days/1091974089">
-              <Image
-                priority
-                quality={100}
-                src={applemusicLogo}
-                alt="Apple Music logo"
-              />
-            </a>
-            <a href="https://www.instagram.com/ditchdays/">
-              <Image priority quality={100} src={tidalLogo} alt="Tidal logo" />
-            </a>
-            <a href="https://ditchdays.bandcamp.com/">
-              <Image priority quality={100} src={bcLogo} alt="Bandcamp logo" />
-            </a>
-          </nav>
-        </div>
-      </main>
-
-      <main className="flex-col gap-6 justify-center items-center w-screen h-screen px-6 container py-10 m-auto overflow-hidden hidden md:flex">
-        <h1 className="text-center text-9xl font-extrabold leading-[0.8]">
-          DITCH
-          <br />
-          DAYS
-        </h1>
-        <h2 className="text-center text-6xl font-extrabold">
-          DESKTOP WEBSITE
-          <br />
-          COMING SOON
-        </h2>
-      </main>
-    </>
+    <div className="flex flex-col gap-10 px-8 container pt-6 pb-16">
+      {albums.map(({ image, alt, links }) => (
+        <AlbumCover
+          key={links.appleMusic}
+          image={image}
+          alt={alt}
+          links={links}
+        />
+      ))}
+    </div>
   )
 }
 

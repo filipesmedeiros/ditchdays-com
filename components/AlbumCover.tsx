@@ -43,7 +43,7 @@ const AlbumCover: FC<Props> = ({ image, alt, links }) => {
       <Image src={image} alt={alt} />
       <div
         className={clsx(
-          'absolute bg-neutral-900/75 w-full h-full top-0 left-0 flex flex-col items-center justify-between p-16',
+          'absolute bg-neutral-900/75 w-full h-full top-0 left-0 flex flex-col items-center justify-between p-12',
           {
             hidden: !showLinks,
           }
