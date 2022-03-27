@@ -24,11 +24,13 @@ const AlbumCover: FC<Props> = ({ image, alt, links }) => {
   const ref = useRef<HTMLDivElement>(null)
   useEffect(() => {
     const cb = (ev: MouseEvent) => {
-      let maintain = false
-      ref.current!.childNodes[0].childNodes.forEach(child => {
-        if (ev.target === child) maintain = true
-      })
-      if (!maintain) setShowLinks(false)
+      if (ref.current) {
+        let maintain = false
+        ref.current.childNodes[0].childNodes.forEach(child => {
+          if (ev.target === child) maintain = true
+        })
+        if (!maintain) setShowLinks(false)
+      }
     }
     window.addEventListener('click', cb)
     return () => window.removeEventListener('click', cb)

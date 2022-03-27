@@ -4,14 +4,8 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
 import MenuBar from '../components/MenuBar'
-import OffCanvasNav from '../components/OffCanvasNav'
 import SocialLinks from '../components/SocialLinks'
 import { useOffCanvasNavContext } from '../hooks/useOffCanvasNav'
-import applemusicLogo from '../public/logos/applemusic-logo.png'
-import bcLogo from '../public/logos/bc-logo.png'
-import instagramLogo from '../public/logos/instagram-logo.png'
-import spotifyLogo from '../public/logos/spotify-logo.png'
-import tidalLogo from '../public/logos/tidal-logo.png'
 import aboutPicture from '../public/pictures/about.jpg'
 import contactPicture from '../public/pictures/contact.jpg'
 import merchPicture from '../public/pictures/merch.jpg'
@@ -47,15 +41,13 @@ const Home: NextPage = () => {
   }, [activePicture])
 
   return (
-    <main className="relative w-full h-full overflow-hidden md:hidden">
-      <div className="flex flex-col justify-between items-center py-10 w-full h-full container">
-        <MenuBar />
+    <>
+      <div className="flex flex-col justify-center h-full">
         <h1 className="text-center text-9xl font-extrabold leading-[0.8]">
           DITCH
           <br />
           DAYS
         </h1>
-        <SocialLinks />
       </div>
 
       <div
@@ -128,7 +120,7 @@ const Home: NextPage = () => {
           role="presentation"
         />
       </div>
-    </main>
+    </>
   )
 }
 

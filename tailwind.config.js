@@ -10,6 +10,7 @@ module.exports = {
       colors: {
         orange: { DEFAULT: '#F5865A' },
         green: { DEFAULT: '#008156' },
+        gray: { DEFAULT: '#1f1e1f' },
       },
     },
   },

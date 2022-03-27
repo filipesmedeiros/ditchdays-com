@@ -8,14 +8,20 @@ import spotifyLogo from '../public/logos/spotify-logo.png'
 import tidalLogo from '../public/logos/tidal-logo.png'
 
 const SocialLinks: FC = () => (
-  <nav className="flex w-full justify-between gap-1 px-6">
-    <a href="https://www.instagram.com/ditchdays/">
+  <nav className="fixed bottom-0 bg-gray flex w-full justify-between items-center gap-1 px-6 py-4">
+    <a href="https://www.instagram.com/ditchdays/" className="leading-[0px]">
       <Image priority quality={100} src={instagramLogo} alt="Instagram logo" />
     </a>
-    <a href="https://open.spotify.com/artist/3B3nEiNlMRAHeSF9hfVyi2">
+    <a
+      href="https://open.spotify.com/artist/3B3nEiNlMRAHeSF9hfVyi2"
+      className="leading-[0px]"
+    >
       <Image priority quality={100} src={spotifyLogo} alt="Spotify logo" />
     </a>
-    <a href="https://music.apple.com/us/artist/ditch-days/1091974089">
+    <a
+      href="https://music.apple.com/us/artist/ditch-days/1091974089"
+      className="leading-[0px]"
+    >
       <Image
         priority
         quality={100}
@@ -23,10 +29,10 @@ const SocialLinks: FC = () => (
         alt="Apple Music logo"
       />
     </a>
-    <a href="https://www.instagram.com/ditchdays/">
+    <a href="https://www.instagram.com/ditchdays/" className="leading-[0px]">
       <Image priority quality={100} src={tidalLogo} alt="Tidal logo" />
     </a>
-    <a href="https://ditchdays.bandcamp.com/">
+    <a href="https://ditchdays.bandcamp.com/" className="leading-[0px]">
       <Image priority quality={100} src={bcLogo} alt="Bandcamp logo" />
     </a>
   </nav>
