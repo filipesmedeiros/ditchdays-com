@@ -19,18 +19,13 @@ interface Props {
 }
 
 const AlbumCover: FC<Props> = ({ image, alt, links }) => {
-  const [showLinks, setShowLinks] = useState(false)
+  const [showLinks, setShowLinks] = useState({ show: false, render: false })
 
   const ref = useRef<HTMLDivElement>(null)
   useEffect(() => {
     const cb = (ev: MouseEvent) => {
-      if (ref.current) {
-        let maintain = false
-        ref.current.childNodes[0].childNodes.forEach(child => {
-          if (ev.target === child) maintain = true
-        })
-        if (!maintain) setShowLinks(false)
-      }
+      if (!ref.current || !ref.current.contains(ev.target as Node))
+        setShowLinks({ show: false, render: true })
     }
     window.addEventListener('click', cb)
     return () => window.removeEventListener('click', cb)
@@ -40,16 +35,23 @@ const AlbumCover: FC<Props> = ({ image, alt, links }) => {
     <div
       ref={ref}
       className="relative shadow-lg hover:cursor-pointer leading-[0px]"
-      onClick={() => setShowLinks(true)}
+      onClick={() => {
+        setShowLinks({ render: true, show: false })
+        setTimeout(() => setShowLinks({ render: true, show: true }), 0)
+      }}
     >
       <Image src={image} alt={alt} />
       <div
         className={clsx(
-          'absolute bg-neutral-900/75 w-full h-full top-0 left-0 flex flex-col items-center justify-between p-12',
+          'absolute bg-neutral-900/75 w-full h-full top-0 left-0 flex flex-col items-center justify-between p-12 transition-opacity',
           {
-            hidden: !showLinks,
-          }
+            hidden: !showLinks.render,
+          },
+          showLinks.show ? 'opacity-1' : 'opacity-0'
         )}
+        onTransitionEnd={() => {
+          if (!showLinks.show) setShowLinks({ show: false, render: false })
+        }}
       >
         <a href={links.spotify}>
           <Image priority quality={100} src={spotifyLogo} alt="Spotify logo" />
