@@ -34,7 +34,7 @@ const Subscribe: NextPage = () => {
         >
           <input
             ref={emailRef}
-            className="self-start bg-transparent border-2 border-white px-5 py-2 leading-none placeholder:font-extralight"
+            className="self-start bg-transparent border-2 border-white px-5 py-2 leading-none placeholder:font-extralight rounded-none"
             placeholder="Email address"
           />
           <button
