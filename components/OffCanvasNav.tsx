@@ -19,7 +19,7 @@ const OffCanvasNav: FC<Props> = ({ open, onClose }) => {
   return (
     <div
       className={clsx(
-        'absolute flex flex-col items-center top-0 w-full h-full bg-black transition-transform duration-700 py-10 font-extralight',
+        'absolute flex flex-col items-center top-0 w-full h-full bg-gray transition-transform duration-700 py-10 font-extralight',
         {
           '-translate-y-full': !open,
         }
