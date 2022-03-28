@@ -1,6 +1,6 @@
 import { NextPage } from 'next'
 import Image from 'next/image'
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 
 import { useOffCanvasNavContext } from '../hooks/useOffCanvasNav'
 import subscribePicture from '../public/pictures/subscribe.jpg'
@@ -8,6 +8,8 @@ import subscribePicture from '../public/pictures/subscribe.jpg'
 const Subscribe: NextPage = () => {
   const { setOpen } = useOffCanvasNavContext()
   useEffect(() => setOpen(false), [setOpen])
+
+  const emailRef = useRef<HTMLInputElement>(null)
 
   return (
     <>
@@ -19,8 +21,19 @@ const Subscribe: NextPage = () => {
             everything DITCH DAYS.
           </p>
         </div>
-        <form className="contents">
+        <form
+          className="contents"
+          onSubmit={ev => {
+            ev.preventDefault()
+            fetch('/api/saveEmail', {
+              method: 'POST',
+              headers: [['Content-Type', 'application/json']],
+              body: JSON.stringify({ email: emailRef.current?.value }),
+            })
+          }}
+        >
           <input
+            ref={emailRef}
             className="self-start bg-transparent border-2 border-white px-5 py-2 leading-none placeholder:font-extralight"
             placeholder="Email address"
           />
