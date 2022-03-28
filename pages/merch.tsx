@@ -13,7 +13,7 @@ const Tour: NextPage = () => {
   return (
     <>
       <ComingSoonLayout>MERCH & CLOTHES</ComingSoonLayout>
-      <div className="absolute -z-20 -right-6 top-0 opacity-70">
+      <div className="absolute -z-20 -right-6 top-0 opacity-50">
         <Image
           priority
           src={merchPicture}

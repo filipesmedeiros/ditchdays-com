@@ -14,7 +14,7 @@ const Tour: NextPage = () => {
     <>
       <ComingSoonLayout>TOUR DATES</ComingSoonLayout>
 
-      <div className="absolute -z-20 -left-12 top-0 opacity-70">
+      <div className="absolute -z-20 -left-12 top-0 opacity-50">
         <Image
           priority
           src={tourPicture}
