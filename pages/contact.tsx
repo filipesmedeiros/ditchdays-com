@@ -42,12 +42,11 @@ const Tour: NextPage = () => {
         </div>
       </div>
 
-      <div className="absolute -z-20 -right-6 top-24 opacity-70">
+      <div className="absolute -z-20 -right-6 top-24 opacity-50">
         <Image
           priority
           src={contactPicture}
-          width={269}
-          height={403}
+          width={170}
           alt="Background picture TODO"
           role="presentation"
         />
