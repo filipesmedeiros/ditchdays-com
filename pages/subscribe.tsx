@@ -46,7 +46,7 @@ const Subscribe: NextPage = () => {
         </form>
       </div>
 
-      <div className="absolute -z-20 -left-10 top-4">
+      <div className="absolute -z-20 -left-10 top-4 opacity-70">
         <Image
           priority
           src={subscribePicture}

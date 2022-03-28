@@ -42,7 +42,7 @@ const Tour: NextPage = () => {
         </div>
       </div>
 
-      <div className="absolute -z-20 -right-6 top-24">
+      <div className="absolute -z-20 -right-6 top-24 opacity-70">
         <Image
           priority
           src={contactPicture}

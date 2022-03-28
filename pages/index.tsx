@@ -3,8 +3,6 @@ import { NextPage } from 'next'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
-import MenuBar from '../components/MenuBar'
-import SocialLinks from '../components/SocialLinks'
 import { useOffCanvasNavContext } from '../hooks/useOffCanvasNav'
 import aboutPicture from '../public/pictures/about.jpg'
 import contactPicture from '../public/pictures/contact.jpg'

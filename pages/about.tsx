@@ -30,7 +30,7 @@ const About: NextPage = () => {
         </p>
       </div>
 
-      <div className="absolute -z-20 -right-36 top-6">
+      <div className="absolute -z-20 -right-36 top-6 opacity-70">
         <Image
           priority
           src={aboutPicture}
