@@ -16,7 +16,7 @@ const Subscribe: NextPage = () => {
       <div className="flex flex-col justify-end pl-16 text-2xl h-full max-h-[650px] pb-8 gap-4">
         <div>
           <h1 className="text-orange text-3xl">STAY IN THE LOOP</h1>
-          <p>
+          <p className="leading-[1.1] font-light">
             Get first-hand access to new releases, shows, exclusive content and
             everything DITCH DAYS.
           </p>
@@ -34,12 +34,12 @@ const Subscribe: NextPage = () => {
         >
           <input
             ref={emailRef}
-            className="self-start bg-transparent border-2 border-white px-5 py-2 leading-none placeholder:font-extralight rounded-none"
+            className="self-start bg-transparent border-2 border-white px-5 py-2 leading-none placeholder:text-white rounded-none"
             placeholder="Email address"
           />
           <button
             type="submit"
-            className="text-orange border-2 border-orange px-5 py-2 leading-none self-start"
+            className="text-orange border-2 border-orange px-5 pb-2 pt-3 leading-none self-start"
           >
             SUBSCRIBE
           </button>

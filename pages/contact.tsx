@@ -11,35 +11,25 @@ const Tour: NextPage = () => {
 
   return (
     <>
-      <div className="flex flex-col justify-end gap-6 pl-16 text-2xl h-full max-h-[650px] pb-8">
-        <div>
+      <div className="flex flex-col justify-end gap-6 pl-16 text-2xl h-full max-h-[650px] pb-8 leading-none">
+        <a href="mailto:general@ditch-days.com" className="max-w-fit">
           <p>
             Booking & Press <span className="text-orange">International</span>
           </p>
-          <p className="font-extralight">
-            <a href="mailto:general@ditch-days.com">general@ditch-days.com</a>
-          </p>
-        </div>
-        <div>
+          <p className="font-extralight">general@ditch-days.com</p>
+        </a>
+        <a href="mailto:joao.vaz.silva@fproducao.pt" className="max-w-fit">
           <p>
             Booking <span className="text-green">Portugal</span>
           </p>
-          <p className="font-extralight">
-            <a href="mailto:joao.vaz.silva@fproducao.pt">
-              joao.vaz.silva@fproducao.pt
-            </a>
-          </p>
-        </div>
-        <div>
+          <p className="font-extralight">joao.vaz.silva@fproducao.pt</p>
+        </a>
+        <a href="mailto:teresa.sequeira@fproducao.pt" className="max-w-fit">
           <p>
             Press <span className="text-green">Portugal</span>
           </p>
-          <p className="font-extralight">
-            <a href="mailto:teresa.sequeira@fproducao.pt">
-              teresa.sequeira@fproducao.pt
-            </a>
-          </p>
-        </div>
+          <p className="font-extralight">teresa.sequeira@fproducao.pt</p>
+        </a>
       </div>
 
       <div className="absolute -z-20 -right-6 top-24 opacity-50">

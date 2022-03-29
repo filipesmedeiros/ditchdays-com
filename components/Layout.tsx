@@ -17,7 +17,7 @@ const Layout: FC = ({ children }) => {
     <OffCanvasNavContextProvider isOpen={isOpen} setOpen={setOpen}>
       <div
         className={clsx(
-          'flex flex-col md:hidden w-full h-full relative overflow-x-hidden',
+          'flex flex-col md:hidden w-full h-full relative overflow-x-hidden landscape:hidden',
           {
             'overflow-y-hidden': hideOverflow,
           }
