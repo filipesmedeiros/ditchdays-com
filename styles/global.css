@@ -1,25 +1,19 @@
-@font-face {
-  font-family: 'Thunder';
-  font-weight: 100;
-  src: url('/fonts/Thunder-ThinHC.otf');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .font-lc {
+    font-variation-settings: 'CNTR' 0;
+  }
+  .font-hc {
+    font-variation-settings: 'CNTR' 100;
+  }
 }
 
 @font-face {
   font-family: 'Thunder';
-  font-weight: 200;
-  src: url('/fonts/Thunder-ExtraLightHC.otf');
-}
-
-@font-face {
-  font-family: 'Thunder';
-  font-weight: 400;
-  src: url('/fonts/Thunder-LC.otf');
-}
-
-@font-face {
-  font-family: 'Thunder';
-  font-weight: 800;
-  src: url('/fonts/Thunder-ExtraBoldLC.otf');
+  src: url('/fonts/Thunder-VF.ttf');
 }
 
 body,

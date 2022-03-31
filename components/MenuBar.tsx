@@ -15,7 +15,7 @@ const MenuBar: FC = () => {
       )}
     >
       <button
-        className="hover:cursor-pointer font-extralight"
+        className="hover:cursor-pointer font-extralight font-hc"
         onClick={() => setOpen(true)}
       >
         MENU

@@ -41,7 +41,7 @@ const Home: NextPage = () => {
   return (
     <>
       <div className="flex flex-col justify-center h-full">
-        <h1 className="text-center text-9xl font-extrabold leading-[0.8]">
+        <h1 className="text-center text-9xl font-bold font-lc leading-[0.8]">
           DITCH
           <br />
           DAYS

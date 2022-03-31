@@ -11,7 +11,7 @@ const About: NextPage = () => {
 
   return (
     <>
-      <div className="text-3xl px-8 font-normal pt-48 pb-16">
+      <div className="text-3xl px-8 font-normal font-lc pt-48 pb-16">
         <p className="py-4">
           “In the past couple of years, we’ve been stuck inside ourselves. Left
           some songs in the drawer, cancelled a tour around Europe. It became

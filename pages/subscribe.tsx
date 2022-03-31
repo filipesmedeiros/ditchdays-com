@@ -45,7 +45,7 @@ const Subscribe: NextPage = () => {
           />
           <button
             type="submit"
-            className="text-orange border-2 border-orange px-5 pb-2 pt-3 leading-none self-start"
+            className="text-orange border-2 font-normal border-orange px-5 pb-2 pt-3 leading-none self-start"
           >
             {success ? 'DONE' : 'SUBSCRIBE'}
           </button>

@@ -11,9 +11,9 @@ const Tour: NextPage = () => {
 
   return (
     <>
-      <div className="flex flex-col justify-end gap-6 pl-16 text-2xl h-full max-h-[650px] pb-8 leading-none">
+      <div className="flex flex-col justify-end gap-6 pl-16 text-2xl h-full max-h-[650px] pb-8 leading-none font-lc">
         <a href="mailto:general@ditch-days.com" className="max-w-fit">
-          <p>
+          <p className="font-normal">
             Booking & Press <span className="text-orange">International</span>
           </p>
           <p className="font-extralight">general@ditch-days.com</p>
