@@ -56,8 +56,8 @@ const Subscribe: NextPage = () => {
         <Image
           priority
           src={subscribePicture}
-          width={302}
-          height={453}
+          width={199}
+          height={299}
           alt="Background picture TODO"
           role="presentation"
         />

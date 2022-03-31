@@ -17,8 +17,8 @@ const Tour: NextPage = () => {
         <Image
           priority
           src={merchPicture}
-          width={269}
-          height={403}
+          width={178}
+          height={266}
           alt="Background picture TODO"
           role="presentation"
         />

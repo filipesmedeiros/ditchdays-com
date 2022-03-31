@@ -30,12 +30,12 @@ const About: NextPage = () => {
         </p>
       </div>
 
-      <div className="absolute -z-20 -right-36 top-6 opacity-70">
+      <div className="absolute -z-20 -right-20 top-6 opacity-70">
         <Image
           priority
           src={aboutPicture}
-          width={511}
-          height={341}
+          width={337}
+          height={225}
           alt="Background picture TODO"
           role="presentation"
         />
