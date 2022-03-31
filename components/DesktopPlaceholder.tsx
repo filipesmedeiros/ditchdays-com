@@ -5,7 +5,7 @@ const DesktopPlaceholder: FC = () => (
     <h1 className="text-center text-9xl font-extrabold leading-[0.8]">
       DITCH DAYS
     </h1>
-    <h2 className="text-center text-6xl font-extralight text-orange">
+    <h2 className="text-center text-6xl font-extralight font-hc text-orange">
       DESKTOP COMING SOON &bull; TRY MOBILE
     </h2>
   </main>
