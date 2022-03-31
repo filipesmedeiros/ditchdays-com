@@ -18,7 +18,7 @@ const MenuBar: FC = () => {
         className="hover:cursor-pointer font-extralight font-hc"
         onClick={() => setOpen(true)}
       >
-        MENU
+        MORE
       </button>
     </div>
   )
