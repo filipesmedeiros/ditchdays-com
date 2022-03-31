@@ -3,11 +3,7 @@ import Image from 'next/image'
 import { useEffect } from 'react'
 
 import { useOffCanvasNavContext } from '../hooks/useOffCanvasNav'
-import aboutPicture from '../public/pictures/about.jpg'
-import contactPicture from '../public/pictures/contact.jpg'
-import merchPicture from '../public/pictures/merch.jpg'
 import subscribePicture from '../public/pictures/subscribe.jpg'
-import tourPicture from '../public/pictures/tour.jpg'
 
 const Home: NextPage = () => {
   const { setOpen } = useOffCanvasNavContext()
