@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import { FC, useEffect, useRef, useState } from 'react'
 
 import applemusicLogo from '../public/logos/applemusic-logo.png'
@@ -31,13 +31,21 @@ const AlbumCover: FC<Props> = ({ image, alt, links }) => {
     return () => window.removeEventListener('click', cb)
   }, [])
 
+  const timeout = useRef<number>()
+  useEffect(() => {
+    if (timeout.current !== null) clearTimeout(timeout.current)
+  }, [])
+
   return (
     <div
       ref={ref}
       className="relative shadow-lg hover:cursor-pointer leading-[0px]"
       onClick={() => {
         setShowLinks({ render: true, show: false })
-        setTimeout(() => setShowLinks({ render: true, show: true }), 0)
+        timeout.current = setTimeout(
+          () => setShowLinks({ render: true, show: true }),
+          0
+        ) as unknown as number
       }}
     >
       <Image src={image} alt={alt} />

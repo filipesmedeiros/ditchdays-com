@@ -7,8 +7,12 @@ import privateeyesCover from '../public/pictures/private-eyes.jpeg'
 const Popup: FC = () => {
   const [show, setShow] = useState({ show: false, render: false })
   useEffect(() => {
-    setShow({ render: true, show: false })
-    setTimeout(() => setShow({ render: true, show: true }), 0)
+    const shouldOpen = localStorage.getItem('hasOpenedPopup') !== 'true'
+    if (shouldOpen) {
+      setShow({ render: true, show: false })
+      const timeout = setTimeout(() => setShow({ render: true, show: true }), 0)
+      return () => clearTimeout(timeout)
+    }
   }, [])
 
   return (
@@ -43,7 +47,10 @@ const Popup: FC = () => {
         </button>
         <span
           className="hover:cursor-pointer"
-          onClick={() => setShow({ show: false, render: true })}
+          onClick={() => {
+            localStorage.setItem('hasOpenedPopup', 'true')
+            setShow({ show: false, render: true })
+          }}
         >
           X
         </span>
