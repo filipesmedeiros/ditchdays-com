@@ -1,5 +1,6 @@
 import clsx from 'clsx'
 import Image from 'next/image'
+import Link from 'next/link'
 import { FC, useEffect, useState } from 'react'
 
 import xIcon from '../public/icons/x.png'
@@ -36,29 +37,32 @@ const Popup: FC = () => {
             before:border-b-2 before:w-full before:border-b-white before:block before:absolute before:top-1/2
           `}
         >
-          <h2 className="font-extralight font-lc text-3xl bg-black z-10 p-3">
+          <h2 className="font-extralight font-lc text-3xl bg-black z-10 px-3">
             new single
           </h2>
         </div>
         <div className="flex flex-col items-center gap-1">
-          <h1 className="text-purple font-hc font-semibold text-6xl text-center">
+          <h1 className="text-purple font-hc font-semibold text-5xl sm:text-6xl text-center">
             Private Eyes
           </h1>
           <Image
+            priority
             src={privateeyesCover}
-            width={250}
-            height={250}
+            width={400}
+            height={400}
             alt="Private Eyes cover"
-            layout="fixed"
           />
         </div>
         <div className="flex flex-col items-center gap-1">
-          <h2 className="font-extralight font-lc text-3xl">
+          <h2 className="font-extralight font-lc text-2xl sm:text-3xl">
             on <b className="font-medium">April 8</b>
           </h2>
-          <button className="rounded-none border-2 border-orange text-orange px-6 pt-4 pb-2 text-4xl font-lc">
+          <a
+            href="https://distrokid.com/hyperfollow/ditchdays/private-eyes-3"
+            className="rounded-none border-2 border-orange text-orange px-6 pt-4 pb-2 text-3xl sm:text-4xl font-lc"
+          >
             PRE-SAVE NOW
-          </button>
+          </a>
         </div>
         <button
           className="hover:cursor-pointer"

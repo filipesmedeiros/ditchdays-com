@@ -8,7 +8,7 @@ import spotifyLogo from '../public/logos/spotify-logo.png'
 import tidalLogo from '../public/logos/tidal-logo.png'
 
 const SocialLinks: FC = () => (
-  <nav className="sticky bottom-0 left-0 bg-gray flex w-full justify-between items-center gap-1 px-6 py-6">
+  <nav className="sticky bottom-0 left-0 bg-gray flex w-full justify-between items-center gap-1 px-6 py-6 md:py-16">
     <a href="https://www.instagram.com/ditchdays/" className="leading-[0px]">
       <Image priority quality={100} src={instagramLogo} alt="Instagram logo" />
     </a>
