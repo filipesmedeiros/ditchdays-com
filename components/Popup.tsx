@@ -2,6 +2,7 @@ import clsx from 'clsx'
 import Image from 'next/image'
 import { FC, useEffect, useState } from 'react'
 
+import xIcon from '../public/icons/x.png'
 import privateeyesCover from '../public/pictures/private-eyes.jpeg'
 
 const Popup: FC = () => {
@@ -28,32 +29,46 @@ const Popup: FC = () => {
         if (!show.show) setShow({ show: false, render: false })
       }}
     >
-      <div className="bg-black/90 h-full w-full flex flex-col justify-between p-2 items-center">
-        <h2 className="font-extralight font-lc text-5xl">new single</h2>
-        <h1 className="text-purple font-hc font-semibold text-7xl text-center">
-          Private Eyes
-        </h1>
-        <Image
-          src={privateeyesCover}
-          width={324}
-          height={324}
-          alt="Private Eyes cover"
-        />
-        <h2 className="font-extralight font-lc text-4xl">
-          on <b className="font-medium">April 8</b>
-        </h2>
-        <button className="rounded-none border-2 border-orange text-orange px-6 pt-4 pb-2 text-4xl font-lc">
-          PRE-SAVE NOW
-        </button>
-        <span
+      <div className="bg-black/90 h-full w-full flex flex-col justify-between py-3 px-5 items-center gap-2">
+        <div
+          className={`
+            relative w-full text-center flex justify-center
+            before:border-b-2 before:w-full before:border-b-white before:block before:absolute before:top-1/2
+          `}
+        >
+          <h2 className="font-extralight font-lc text-3xl bg-black z-10 p-3">
+            new single
+          </h2>
+        </div>
+        <div className="flex flex-col items-center gap-1">
+          <h1 className="text-purple font-hc font-semibold text-6xl text-center">
+            Private Eyes
+          </h1>
+          <Image
+            src={privateeyesCover}
+            width={250}
+            height={250}
+            alt="Private Eyes cover"
+            layout="fixed"
+          />
+        </div>
+        <div className="flex flex-col items-center gap-1">
+          <h2 className="font-extralight font-lc text-3xl">
+            on <b className="font-medium">April 8</b>
+          </h2>
+          <button className="rounded-none border-2 border-orange text-orange px-6 pt-4 pb-2 text-4xl font-lc">
+            PRE-SAVE NOW
+          </button>
+        </div>
+        <button
           className="hover:cursor-pointer"
           onClick={() => {
             localStorage.setItem('hasOpenedPopup', 'true')
             setShow({ show: false, render: true })
           }}
         >
-          X
-        </span>
+          <Image src={xIcon} alt="Close popup" />
+        </button>
       </div>
     </div>
   )
