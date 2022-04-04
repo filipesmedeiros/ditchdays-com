@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   mode: 'jit',
   content: [
@@ -15,6 +17,10 @@ module.exports = {
       },
       fontSize: {
         '10xl': '166px',
+      },
+      screens: {
+        xs: '475px',
+        ...defaultTheme.screens,
       },
     },
   },

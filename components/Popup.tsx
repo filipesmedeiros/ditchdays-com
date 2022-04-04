@@ -45,13 +45,14 @@ const Popup: FC = () => {
           <h1 className="text-purple font-hc font-semibold text-5xl sm:text-6xl text-center">
             Private Eyes
           </h1>
-          <Image
-            priority
-            src={privateeyesCover}
-            width={400}
-            height={400}
-            alt="Private Eyes cover"
-          />
+          <div className="leading-[0px] !w-48 !h-48 xs:!w-72 xs:!h-72">
+            <Image
+              priority
+              src={privateeyesCover}
+              alt="Private Eyes cover"
+              className=""
+            />
+          </div>
         </div>
         <div className="flex flex-col items-center gap-1">
           <h2 className="font-extralight font-lc text-2xl sm:text-3xl">
