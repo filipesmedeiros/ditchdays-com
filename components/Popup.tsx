@@ -20,7 +20,7 @@ const Popup: FC = () => {
   return (
     <div
       className={clsx(
-        'absolute top-0 left-0 p-5 h-screen w-screen z-20 transition pb-16 xs:pb-5',
+        'absolute top-0 left-0 p-5 h-screen w-screen z-20 transition pb-20 xs:pb-5',
         {
           hidden: !show.render,
         },
