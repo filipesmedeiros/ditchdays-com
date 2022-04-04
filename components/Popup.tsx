@@ -30,7 +30,7 @@ const Popup: FC = () => {
         if (!show.show) setShow({ show: false, render: false })
       }}
     >
-      <div className="bg-black/90 h-full w-full flex flex-col justify-between py-3 px-5 items-center gap-2">
+      <div className="bg-black/90 h-full w-full flex flex-col justify-between pt-3 pb-1 px-5 items-center gap-4">
         <div
           className={`
             relative w-full text-center flex justify-center
