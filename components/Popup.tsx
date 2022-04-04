@@ -20,7 +20,7 @@ const Popup: FC = () => {
   return (
     <div
       className={clsx(
-        'absolute top-0 left-0 p-5 h-screen w-screen z-20 transition pb-20 xs:pb-5',
+        'fixed top-0 left-0 p-5 h-screen w-screen z-20 transition',
         {
           hidden: !show.render,
         },
@@ -45,7 +45,7 @@ const Popup: FC = () => {
           <h1 className="text-purple font-hc font-semibold text-5xl sm:text-6xl text-center">
             Private Eyes
           </h1>
-          <div className="leading-[0px] !w-64 !h-64 xs:!w-72 xs:!h-72">
+          <div className="leading-[0px]">
             <Image
               priority
               src={privateeyesCover}
