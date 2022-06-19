@@ -3,6 +3,8 @@ import { useEffect } from 'react'
 
 import AlbumCover from '../components/AlbumCover'
 import { useOffCanvasNavContext } from '../hooks/useOffCanvasNav'
+import clementineSpaceBetweenEverythingCover from '../public/pictures/private-eyes.jpeg'
+import privateEyesCover from '../public/pictures/private-eyes.jpeg'
 import andyKaufmanCover from '../public/pictures/andy-kaufman.jpg'
 import baltimoreCover from '../public/pictures/baltimore.jpg'
 import downtownCover from '../public/pictures/downtown.jpg'
@@ -11,6 +13,27 @@ import liquidSpringsCover from '../public/pictures/liquid-springs.jpg'
 import sethRogenCover from '../public/pictures/seth-rogen.png'
 
 const albums = [
+  {
+    image: clementineSpaceBetweenEverythingCover,
+    alt: '"Clementine/Space Between Everything" cover',
+    links: {
+      appleMusic: 'https://music.apple.com/us/album/clementine-ep/1625389492',
+      tidal: 'https://tidal.com/browse/album/230219825',
+      spotify: 'https://open.spotify.com/album/0OUokANrQiTMOjAmU3gX73',
+      bandcamp: '',
+    },
+  },
+  {
+    image: privateEyesCover,
+    alt: '"Private Eyes" cover',
+    links: {
+      appleMusic:
+        'https://music.apple.com/pt/album/private-eyes/1615117797?i=1615117798',
+      tidal: 'https://tidal.com/browse/album/221320188',
+      spotify: 'https://open.spotify.com/album/0OUokANrQiTMOjAmU3gX73',
+      bandcamp: 'https://ditchdays.bandcamp.com/album/private-eyes',
+    },
+  },
   {
     image: baltimoreCover,
     alt: '"Baltimore" cover',

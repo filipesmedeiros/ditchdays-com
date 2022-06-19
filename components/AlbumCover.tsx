@@ -75,7 +75,14 @@ const AlbumCover: FC<Props> = ({ image, alt, links }) => {
         <a href={links.tidal}>
           <Image priority quality={100} src={tidalLogo} alt="Tidal logo" />
         </a>
-        <a href={links.bandcamp}>
+        <a
+          href={links.bandcamp}
+          className={clsx(
+            !links.bandcamp
+              ? 'hover:cursor-not-allowed pointer-events-none opacity-30'
+              : ''
+          )}
+        >
           <Image priority quality={100} src={bcLogo} alt="Bandcamp logo" />
         </a>
       </div>

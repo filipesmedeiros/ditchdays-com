@@ -1,6 +1,5 @@
 import clsx from 'clsx'
 import Image from 'next/image'
-import Link from 'next/link'
 import { FC, useEffect, useState } from 'react'
 
 import xIcon from '../public/icons/x.png'
