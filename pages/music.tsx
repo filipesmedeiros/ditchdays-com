@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 
 import AlbumCover from '../components/AlbumCover'
 import { useOffCanvasNavContext } from '../hooks/useOffCanvasNav'
-import clementineSpaceBetweenEverythingCover from '../public/pictures/private-eyes.jpeg'
+import clementineSpaceBetweenEverythingCover from '../public/pictures/clementine-space-between-everything.jpeg'
 import privateEyesCover from '../public/pictures/private-eyes.jpeg'
 import andyKaufmanCover from '../public/pictures/andy-kaufman.jpg'
 import baltimoreCover from '../public/pictures/baltimore.jpg'
